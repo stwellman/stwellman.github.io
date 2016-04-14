@@ -1451,6 +1451,7 @@ function checkTime(t) {
 }
 var scriptVersion = "5.3.0";
 $(function() {
+	doWunderWeather();
     return $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
         refresh()
     }), startTime(), $(".dashboard").click(function(t) {
