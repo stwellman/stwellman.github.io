@@ -180,9 +180,9 @@ ul{list-style-type: none;padding-left:0;}
 .theme-default {color: white}
 
 /* smooth */
-.theme-smooth .tiles {overflow: visble;margin: 8px;}
+.theme-smooth .tiles {overflow: visible;}
 .theme-smooth .tile {background-color: #333333;
-    border: 1px solid #666666;
+    border: 1px solid #666666;  margin: 8px;
     color: #C8DAE3;border-radius: 5px;}
 .theme-smooth .blank.tile {border: 0px solid #666666;}
 .theme-smooth  .ui-slider-handle.ui-btn.ui-shadow {background-color:white}
