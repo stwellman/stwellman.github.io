@@ -179,6 +179,15 @@ ul{list-style-type: none;padding-left:0;}
 /*  THEMES */
 .theme-default {color: white}
 
+/* smooth */
+.theme-smooth .tiles {overflow: visble;margin: 8px;}
+.theme-smooth .tile {background-color: #333333;
+    border: 1px solid #666666;
+    color: #C8DAE3;border-radius: 5px;}
+.theme-smooth  .ui-slider-handle.ui-btn.ui-shadow {background-color:white}
+.theme-smooth .tile.active .icon i.active {color: blue}
+.theme-smooth {color: white}
+
 /* slate */
 .theme-slate .tile {background-color:#333333}
 .theme-slate  .ui-slider-handle.ui-btn.ui-shadow {background-color:white}
