@@ -184,6 +184,7 @@ ul{list-style-type: none;padding-left:0;}
 .theme-smooth .tile {background-color: #333333;
     border: 1px solid #666666;
     color: #C8DAE3;border-radius: 5px;}
+.theme-smooth .blank.tile {border: 0px solid #666666;}
 .theme-smooth  .ui-slider-handle.ui-btn.ui-shadow {background-color:white}
 .theme-smooth .tile.active .icon i.active {color: blue}
 .theme-smooth {color: white}
