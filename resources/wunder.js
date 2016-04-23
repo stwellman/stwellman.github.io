@@ -15,7 +15,7 @@ function doWunderWeather() {
 
 function getCurrentCondition() {
 	console.log("getCurrentCondition...");
-	// deleteCookie("wunderCurrent");
+	deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
 	if (cachedCondition == undefined) {
 		console.log("cookie undefined, getting current conditions");
