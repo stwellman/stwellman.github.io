@@ -65,8 +65,8 @@ function parseCondition(result) {
 	var condition = new wunderCondition();
 	condition.location = result.current_observation.display_location.full;
 	condition.updated = result.current_observation.observation_time;
-	condition.temp = result.current_observation.temp_f + "°";
-	condition.feelsLike = result.current_observation.feelslike_f + "°";
+	condition.temp = result.current_observation.temp_f;
+	condition.feelsLike = result.current_observation.feelslike_f;
 	condition.humidity = result.current_observation.relative_humidity;
 	condition.shortText = result.current_observation.weather;
 	// console.log("icon..." + result.current_observation.icon);
@@ -96,7 +96,7 @@ function parseForecast(result) {
 function parseForecastDay(day) {
 	var condition = new wunderCondition();
 	condition.title = day.date.weekday;
-	condition.temp = day.high.fahrenheit + "°";
+	condition.temp = day.high.fahrenheit;
 	condition.shortText = "";
 	return condition;
 }
@@ -104,7 +104,7 @@ function parseForecastDay(day) {
 function parseForecastNight(day) {
 	var condition = new wunderCondition();
 	condition.title = day.date.weekday + " Night";
-	condition.temp = day.low.fahrenheit + "°";
+	condition.temp = day.low.fahrenheit;
 	condition.shortText = "";
 	return condition;
 
@@ -113,15 +113,15 @@ function parseForecastNight(day) {
 function renderWunderCurrentCondition(condition) {
 	$("#wunder-location").text(condition.location);
 	$("#wunder-updated").text(condition.updated);
-	$("#wunder-current-temp").html("&nbsp;" + Math.round(condition.temp));
-	$("#wunder-current-feels").html("Feels " + Math.round(condition.feelsLike));
+	$("#wunder-current-temp").html("&nbsp;" + Math.round(condition.temp) + "°");
+	$("#wunder-current-feels").html("Feels " + Math.round(condition.feelsLike) + "°");
 	$("#wunder-current-condition").text(condition.shortText);
 	$("#wunder-current-icon").addClass(condition.icon);
 }
 
 function renderWunderForecast(forecast) {
-	$("#wunder-today-high").text(forecast[0].temp);
-	$("#wunder-today-low").text(forecast[1].temp);
+	$("#wunder-today-high").text(forecast[0].temp + "°");
+	$("#wunder-today-low").text(forecast[1].temp + "°");
 }
 
 function setCookie(cname, cvalue, minutes) {
