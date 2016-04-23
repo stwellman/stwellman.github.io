@@ -15,7 +15,7 @@ function doWunderWeather() {
 
 function getCurrentCondition() {
 	console.log("getCurrentCondition...");
-	deleteCookie("wunderCurrent");
+	//deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
 	if (cachedCondition == undefined) {
 		console.log("cookie undefined, getting current conditions");
@@ -41,7 +41,7 @@ function getCurrentCondition() {
 
 function getForecastConditions() {
 	var cachedForecast = getCookie("wunderForecast");
-	deleteCookie("wunderForecast");
+	//deleteCookie("wunderForecast");
 	if (cachedForecast == undefined) {
 		console.log("cookie undefined, getting forecast conditions");
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/forecast/q/35080.json";
