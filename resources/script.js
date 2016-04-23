@@ -324,3 +324,5 @@ nextPoll(30), refresh(3600), CoolClock.config.skins = {
 };
 var cellSize = getUrlParameter("t") || tileSize,
     cellGutter = getUrlParameter("g") || 4;
+
+console.log("gutter: " + cellGutter);
