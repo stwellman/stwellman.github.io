@@ -220,6 +220,6 @@ var fadeOn = 100,
     polling, wtfCloud = !1;
 nextPoll(30), refresh(3600);
 var cellSize = getUrlParameter("t") || tileSize,
-    cellGutter = getUrlParameter("g") || 10;
+    cellGutter = getUrlParameter("g") || 6;
 
 console.log("gutter: " + cellGutter);
