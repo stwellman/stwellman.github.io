@@ -69,6 +69,7 @@ function parseCondition(result) {
 	condition.temp = result.current_observation.temp_f;
 	condition.feelsLike = result.current_observation.feelslike_f;
 	condition.humidity = result.current_observation.relative_humidity;
+	condition.wind = result.current_observation.wind_string;
 	condition.shortText = result.current_observation.weather;
 	// console.log("icon..." + result.current_observation.icon);
 	// condition.icon = wunderIcons[result.current_observation.icon];
@@ -117,6 +118,7 @@ function renderWunderCurrentCondition(condition) {
 	$("#wunder-current-temp").html("&nbsp;" + Math.round(condition.temp) + "°");
 	$("#wunder-current-feels").html("Feels " + Math.round(condition.feelsLike) + "°");
 	$("#wunder-current-condition").text(condition.shortText);
+	$("#wunder-current-wind").text(condition.wind);
 	$("#wunder-current-icon").addClass(condition.icon);
 }
 
@@ -154,6 +156,7 @@ var wunderCondition = function() {
 	this.shortText = "";
 	this.longText = "";
 	this.precip = "";
+	this.wind = "";
 	this.icon = "";
 };
 
