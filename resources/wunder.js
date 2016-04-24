@@ -72,7 +72,7 @@ function parseCondition(result) {
 	condition.humidity = current.relative_humidity;
 	condition.wind = Math.round(current.wind_mph) + " " + current.wind_dir;
 	if (current.wind_mph != current.wind_gust_mph) {
-		condition.wind += " (gust to " + Math.round(current.wind_gust_mph) + ")";
+		condition.wind += " (gusts to " + Math.round(current.wind_gust_mph) + ")";
 	}
 	condition.shortText = current.weather;
 	// console.log("icon..." + current.icon);
