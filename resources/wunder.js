@@ -173,7 +173,8 @@ var wunderWind = {
 	North : "N",
 	East : "E",
 	South : "S",
-	West : "W";
+	West : "W"
+};
 
 var wunderIcons = {
 	chanceflurries : "wi-snow",
