@@ -70,7 +70,7 @@ function parseCondition(result) {
 	condition.temp = current.temp_f;
 	condition.feelsLike = current.feelslike_f;
 	condition.humidity = current.relative_humidity;
-	condition.wind = Math.round(current.wind_mph) + " " + current.wind_dir;
+	condition.wind = Math.round(current.wind_mph) + " " + convertWunderWind(current.wind_dir);
 	if (current.wind_mph != current.wind_gust_mph) {
 		condition.wind += " (gusts to " + Math.round(current.wind_gust_mph) + ")";
 	}
@@ -131,6 +131,11 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-low").text(forecast[1].temp + "°");
 }
 
+function convertWunderWind(direction) {
+	var dir = wunderWind[direction];
+	return dir == undefined ? direction : dir;
+}
+
 function setCookie(cname, cvalue, minutes) {
 	var d = new Date();
 	d.setTime(d.getTime() + (minutes * 60 * 1000));
@@ -164,6 +169,11 @@ var wunderCondition = function() {
 	this.icon = "";
 };
 
+var wunderWind = {
+	North : "N",
+	East : "E",
+	South : "S",
+	West : "W";
 
 var wunderIcons = {
 	chanceflurries : "wi-snow",
@@ -185,7 +195,6 @@ var wunderIcons = {
 	snow : "wi-snow",
 	sunny : "wi-day-sunny",
 	tstorms : "wi-storm-showers",
-
 	nt_chanceflurries : "wi-snow",
 	nt_chancerain : "wi-rain",
 	nt_chancesleet : "wi-night-rain-mix",
