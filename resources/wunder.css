@@ -48,6 +48,10 @@
       height: 65px;
 }
  
+#wunder-today-1 div {
+      line-height: 1.1em;
+}
+ 
 #wunder-current-condition, #wunder-today-condition {
       font-size: 1.4em;
 }
@@ -72,7 +76,7 @@
 	border: 1px solid blue;
 	bottom: 0;
 	font-size: 1.1em;
-	height: 120px;
+	height: 90px;
 	margin: 0 4px 0 4px;
 	position: absolute;
 	text-align: center;
