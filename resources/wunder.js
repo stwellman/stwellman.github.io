@@ -15,7 +15,7 @@ function doWunderWeather() {
 
 function getCurrentCondition() {
 	console.log("getCurrentCondition...");
-	//deleteCookie("wunderCurrent");
+	deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
 	if (cachedCondition == undefined) {
 		console.log("cookie undefined, getting current conditions");
@@ -63,17 +63,18 @@ function getForecastConditions() {
 }
 
 function parseCondition(result) {
+	var current = result.current_observation;
 	var condition = new wunderCondition();
-	condition.location = result.current_observation.display_location.full;
-	condition.updated = result.current_observation.observation_time;
-	condition.temp = result.current_observation.temp_f;
-	condition.feelsLike = result.current_observation.feelslike_f;
-	condition.humidity = result.current_observation.relative_humidity;
-	condition.wind = result.current_observation.wind_string;
-	condition.shortText = result.current_observation.weather;
-	// console.log("icon..." + result.current_observation.icon);
-	// condition.icon = wunderIcons[result.current_observation.icon];
-	var url = result.current_observation.icon_url;
+	condition.location = current.display_location.full;
+	condition.updated = current.observation_time;
+	condition.temp = current.temp_f;
+	condition.feelsLike = current.feelslike_f;
+	condition.humidity = current.relative_humidity;
+	condition.wind = current.wind_mph + " " + current.wind_dir + "(" + current.wind_gust_mph + "gust )";
+	condition.shortText = current.weather;
+	// console.log("icon..." + current.icon);
+	// condition.icon = wunderIcons[current.icon];
+	var url = current.icon_url;
 	url = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.'));
 	condition.icon = wunderIcons[url];
 	console.log("icon: " + condition.icon);
