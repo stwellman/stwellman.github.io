@@ -138,7 +138,7 @@ function formatWunderWind(speed, direction, gust) {
 			windString += " (gusts to " + Math.round(gust) + ")";
 		}
 	}
-	return windStirng;
+	return windString;
 }
 
 function setCookie(cname, cvalue, minutes) {
