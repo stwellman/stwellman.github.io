@@ -70,10 +70,9 @@ function parseCondition(result) {
 	condition.temp = current.temp_f;
 	condition.feelsLike = current.feelslike_f;
 	condition.humidity = current.relative_humidity;
-	condition.wind = Math.round(current.wind_mph) + " " + convertWunderWind(current.wind_dir);
-	if (current.wind_mph != current.wind_gust_mph) {
-		condition.wind += " (gusts to " + Math.round(current.wind_gust_mph) + ")";
-	}
+	condition.windMph = current.wind_mph;
+	condition.windDir = current.wind_dir;
+	condition.windGust = current.wind_gust_mph;
 	condition.shortText = current.weather;
 	// console.log("icon..." + current.icon);
 	// condition.icon = wunderIcons[current.icon];
@@ -122,7 +121,7 @@ function renderWunderCurrentCondition(condition) {
 	$("#wunder-current-temp").html("&nbsp;" + Math.round(condition.temp) + "°");
 	$("#wunder-current-feels").html("Feels " + Math.round(condition.feelsLike) + "°");
 	$("#wunder-current-condition").text(condition.shortText);
-	$("#wunder-current-wind").text(condition.wind);
+	$("#wunder-current-wind").text(formatWunderWind(condition.windMph, condition.windDir, condition.windGust));
 	$("#wunder-current-icon").addClass(condition.icon);
 }
 
@@ -131,12 +130,12 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-low").text(forecast[1].temp + "°");
 }
 
-function formatWunderWind(speed, direction, gusts) {
+function formatWunderWind(speed, direction, gust) {
 	var windString = "Calm";
 	if (speed > 0) {
 		windString = Math.round(speed) + " " + wunderWind[direction] == undefined ? direction : wunderWind[direction];
-		if (gusts > speed) {
-			windString += " (gusts to " + Math.round(gusts) + ")";
+		if (gust > speed) {
+			windString += " (gusts to " + Math.round(gust) + ")";
 		}
 	}
 	return windStirng;
@@ -171,7 +170,9 @@ var wunderCondition = function() {
 	this.shortText = "";
 	this.longText = "";
 	this.precip = "";
-	this.wind = "";
+	this.windMph = 0;
+	this.windDir = "";
+	this.windGust = "";
 	this.icon = "";
 };
 
