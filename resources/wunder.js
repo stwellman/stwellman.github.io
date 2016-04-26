@@ -131,9 +131,15 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-low").text(forecast[1].temp + "°");
 }
 
-function convertWunderWind(direction) {
-	var dir = wunderWind[direction];
-	return dir == undefined ? direction : dir;
+function formatWunderWind(speed, direction, gusts) {
+	var windString = "Calm";
+	if (speed > 0) {
+		windString = Math.round(speed) + " " + wunderWind[direction] == undefined ? direction : wunderWind[direction];
+		if (gusts > speed) {
+			windString += " (gusts to " + Math.round(gusts) + ")";
+		}
+	}
+	return windStirng;
 }
 
 function setCookie(cname, cvalue, minutes) {
