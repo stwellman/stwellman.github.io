@@ -139,7 +139,9 @@ function formatWunderWind(speed, direction, gust) {
 	var windString = "Calm";
 	//if (speed > 0) {
 		console.log("ws: " + windString);
-		windString = Math.round(speed) + " " + wunderWind[direction] == undefined ? direction : wunderWind[direction];
+		var windDir = wunderWind[direction] == undefined ? direction : wunderWind[direction];
+		console.log("windDir: " + windDir);
+		windString = Math.round(speed) + " " + windDir;
 		console.log("ws2: " + windString);
 		if (gust > speed) {
 			windString += " (gusts to " + Math.round(gust) + ")";
