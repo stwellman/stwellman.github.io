@@ -133,21 +133,21 @@ function renderWunderForecast(forecast) {
 }
 
 function formatWunderWind(speed, direction, gust) {
-		console.log("speed: " + speed);
-		console.log("direction: " + direction);
-		console.log("gust: " + gust);
+	//console.log("speed: " + speed);
+	//console.log("direction: " + direction);
+	//console.log("gust: " + gust);
 	var windString = "Calm";
-	//if (speed > 0) {
-		console.log("ws: " + windString);
+	if (speed > 0) {
+		//console.log("ws: " + windString);
 		var windDir = wunderWind[direction] == undefined ? direction : wunderWind[direction];
-		console.log("windDir: " + windDir);
+		//console.log("windDir: " + windDir);
 		windString = Math.round(speed) + " " + windDir;
-		console.log("ws2: " + windString);
+		//console.log("ws2: " + windString);
 		if (gust > speed) {
 			windString += " (gusts to " + Math.round(gust) + ")";
-		console.log("ws: " + windString);
+			//console.log("ws: " + windString);
 		}
-	//}
+	}
 	return windString;
 }
 
