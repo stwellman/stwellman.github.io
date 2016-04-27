@@ -3,10 +3,12 @@
 //******************************************************************
 //  Weather Underground scripts
 
-// http://api.wunderground.com/api/c5209dc3ae8416a7/geolookup/q/94107.json
-// http://api.wunderground.com/api/c5209dc3ae8416a7/conditions/q/94107.json
-// http://api.wunderground.com/api/c5209dc3ae8416a7/forecast/q/94107.json
+// http://api.wunderground.com/api/c5209dc3ae8416a7/geolookup/q/35080.json
+// http://api.wunderground.com/api/c5209dc3ae8416a7/conditions/q/35080.json
+// http://api.wunderground.com/api/c5209dc3ae8416a7/forecast/q/35080.json
 // http://api.wunderground.com/api/c5209dc3ae8416a7/forecast10day/q/35080.json
+// http://api.wunderground.com/api/c5209dc3ae8416a7/astronomy/q/35080.json
+
 
 function doWunderWeather() {
 	getCurrentCondition();
