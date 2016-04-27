@@ -133,11 +133,17 @@ function renderWunderForecast(forecast) {
 }
 
 function formatWunderWind(speed, direction, gust) {
+		console.log("speed: " + speed);
+		console.log("direction: " + direction);
+		console.log("gust: " + gust);
 	var windString = "Calm";
 	//if (speed > 0) {
+		console.log("ws: " + windString);
 		windString = Math.round(speed) + " " + wunderWind[direction] == undefined ? direction : wunderWind[direction];
+		console.log("ws2: " + windString);
 		if (gust > speed) {
 			windString += " (gusts to " + Math.round(gust) + ")";
+		console.log("ws: " + windString);
 		}
 	//}
 	return windString;
