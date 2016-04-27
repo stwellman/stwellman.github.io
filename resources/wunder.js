@@ -134,12 +134,12 @@ function renderWunderForecast(forecast) {
 
 function formatWunderWind(speed, direction, gust) {
 	var windString = "Calm";
-	if (speed > 0) {
+	//if (speed > 0) {
 		windString = Math.round(speed) + " " + wunderWind[direction] == undefined ? direction : wunderWind[direction];
 		if (gust > speed) {
 			windString += " (gusts to " + Math.round(gust) + ")";
 		}
-	}
+	//}
 	return windString;
 }
 
