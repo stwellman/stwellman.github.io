@@ -13,6 +13,7 @@
 function doWunderWeather() {
 	getCurrentCondition();
 	getForecastConditions();
+	getWunderAstronomy();
 }
 
 function getCurrentCondition() {
@@ -62,6 +63,29 @@ function getForecastConditions() {
 		renderWunderForecast(cachedForecast);
 	}
 	setTimeout(getForecastConditions, 60 * 60 * 1000);
+}
+
+function getWunderAstronomy() {
+	var cachedAstronomy = getCookie("wunderAstronomy");
+	//deleteCookie("wunderAstronomy");
+	if (cachedAstronomy == undefined) {
+		console.log("cookie undefined, getting astronomy conditions");
+		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/astronomy/q/35080.json";
+		$.ajax(url, {
+			success : function(result) {
+				var astronomy = parseAstronomy(result);
+				renderWunderAstronomy(astronomy);
+				setCookie("wunderAstronomy", astronomy, 45);
+			},
+			error : function() {
+				// Handle error
+				console.log("Error occurred retrieving astronomy data.")
+			}
+		});
+	} else {
+		renderWunderAstronomy(cachedAstronomy);
+	}
+	setTimeout(getWunderAstronomy, 12 * 60 * 60 * 1000);
 }
 
 function parseCondition(result) {
@@ -115,6 +139,22 @@ function parseForecastNight(day) {
 	condition.shortText = "";
 	return condition;
 
+}
+
+function parseAstronomy(result) {
+	var phase = result.sun_phase;
+	var astronomy = new wunderAstronomy();
+	astronomy.sunriseHour = phase.sunrise.hour;
+	astronomy.sunriseMinute = phase.sunrise.minute;
+	astronomy.sunsetHour = phase.sunset.hour;
+	astronomy.sunsetMinute = phase.sunset.minute;
+
+	return astronomy;
+}
+
+function renderWunderAstronomy(astronomy) {
+	$("#wunder-sunrise").text(astronomy.sunriseMinute + ":" + astronomy.sunriseMinute);
+	$("#wunder-sunset").text(astronomy.sunsetMinute + ":" + astronomy.sunsetMinute);
 }
 
 function renderWunderCurrentCondition(condition) {
@@ -184,6 +224,13 @@ var wunderCondition = function() {
 	this.windDir = "";
 	this.windGust = "";
 	this.icon = "";
+};
+
+var wunderAstronomy = function() {
+	this.sunriseHour = 0;
+	this.sunriseMinute = 0;
+	this.sunsetHour = 0;
+	this.sunsetMinute = 0;
 };
 
 var wunderWind = {
