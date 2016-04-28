@@ -154,7 +154,7 @@ function parseAstronomy(result) {
 
 function renderWunderAstronomy(astronomy) {
 	$("#wunder-sunrise").text(astronomy.sunriseHour + ":" + astronomy.sunriseMinute + "am");
-	$("#wunder-sunset").text(astronomy.sunsetHour + ":" + astronomy.sunsetMinute + "pm");
+	$("#wunder-sunset").text((astronomy.sunsetHour - 12) + ":" + astronomy.sunsetMinute + "pm");
 }
 
 function renderWunderCurrentCondition(condition) {
