@@ -153,8 +153,8 @@ function parseAstronomy(result) {
 }
 
 function renderWunderAstronomy(astronomy) {
-	$("#wunder-sunrise").text(astronomy.sunriseMinute + ":" + astronomy.sunriseMinute);
-	$("#wunder-sunset").text(astronomy.sunsetMinute + ":" + astronomy.sunsetMinute);
+	$("#wunder-sunrise").text(astronomy.sunriseHour + ":" + astronomy.sunriseMinute + "am");
+	$("#wunder-sunset").text(astronomy.sunsetHour + ":" + astronomy.sunsetMinute + "pm");
 }
 
 function renderWunderCurrentCondition(condition) {
