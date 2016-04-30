@@ -172,7 +172,7 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-low").text(forecast[1].temp + "°");
 }
 
-function formatWunderWind(speed, direction, gust) {
+function formatWunderWind2(speed, direction, gust) {
 	//console.log("speed: " + speed);
 	//console.log("direction: " + direction);
 	//console.log("gust: " + gust);
@@ -187,6 +187,18 @@ function formatWunderWind(speed, direction, gust) {
 			//windString += " (gusts to " + Math.round(gust) + ")";
 			//console.log("ws: " + windString);
 		//}
+	}
+	console.log("returning: " + windString);
+	return windString;
+}
+
+function formatWunderWind(speed, direction, gust) {
+	//console.log("speed: " + speed);
+	//console.log("direction: " + direction);
+	//console.log("gust: " + gust);
+	var windString = "Calm";
+	if (speed > 0) {
+		windString = Math.round(speed) + " " + direction;
 	}
 	console.log("returning: " + windString);
 	return windString;
