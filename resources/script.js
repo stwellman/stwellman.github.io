@@ -161,7 +161,7 @@ function checkTime(t) {
 var scriptVersion = "5.3.0";
 $(function() {
 	doWunderWeather();
-    $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
+    return $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
         refresh()
     }), startTime(), $(".dashboard").click(function(t) {
         animateClick($(this)), t.stopImmediatePropagation(), t.preventDefault(), $(".refresh .icon").addClass("fa-spin"), window.location = $(this).find("a").attr("href")
