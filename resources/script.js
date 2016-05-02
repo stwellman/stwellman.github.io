@@ -161,7 +161,7 @@ function checkTime(t) {
 var scriptVersion = "5.3.0";
 $(function() {
 	doWunderWeather();
-    return $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
+    $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
         refresh()
     }), startTime(), $(".dashboard").click(function(t) {
         animateClick($(this)), t.stopImmediatePropagation(), t.preventDefault(), $(".refresh .icon").addClass("fa-spin"), window.location = $(this).find("a").attr("href")
@@ -213,7 +213,8 @@ $(function() {
         thermostatEvent($(this).closest(".tile"), 1)
     }), void $(".thermostatHeat .down, .thermostatCool .down").click(function() {
         thermostatEvent($(this).closest(".tile"), -1)
-    }))
+    }));
+	doCustomJs();
 });
 var fadeOn = 100,
     fadeOff = 200,
@@ -223,3 +224,10 @@ var cellSize = getUrlParameter("t") || tileSize,
     cellGutter = getUrlParameter("g") || 6;
 
 console.log("gutter: " + cellGutter);
+
+//*********************  custom js
+function doCustomJs() {
+	$('div[data-device='1465e50d-871e-4c2b-949f-befab84d21e2']').click(function() {
+        	alert("test");
+	})	
+}
