@@ -160,6 +160,7 @@ function checkTime(t) {
 }
 var scriptVersion = "5.3.0";
 $(function() {
+	doCustomJs();
 	doWunderWeather();
     return $(".tile").append("<i class='spinner fa fa-refresh fa-spin'></i>"), setIcons(), $(".refresh, .clock").click(function() {
         refresh()
@@ -227,7 +228,7 @@ console.log("gutter: " + cellGutter);
 
 //*********************  custom js
 function doCustomJs() {
-//	$('div[data-device='1465e50d-871e-4c2b-949f-befab84d21e2']').click(function() {
-//        	alert("test");
-//	})	
+	$('div[data-device='1465e50d-871e-4c2b-949f-befab84d21e2']').click(function() {
+        	alert("test");
+	})	
 }
