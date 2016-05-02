@@ -214,7 +214,7 @@ $(function() {
     }), void $(".thermostatHeat .down, .thermostatCool .down").click(function() {
         thermostatEvent($(this).closest(".tile"), -1)
     }));
-	doCustomJs();
+	//doCustomJs();
 });
 var fadeOn = 100,
     fadeOff = 200,
@@ -227,7 +227,7 @@ console.log("gutter: " + cellGutter);
 
 //*********************  custom js
 function doCustomJs() {
-	$('div[data-device='1465e50d-871e-4c2b-949f-befab84d21e2']').click(function() {
-        	alert("test");
-	})	
+//	$('div[data-device='1465e50d-871e-4c2b-949f-befab84d21e2']').click(function() {
+//        	alert("test");
+//	})	
 }
