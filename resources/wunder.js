@@ -20,7 +20,7 @@ function getCurrentCondition() {
 	console.log("getCurrentCondition...");
 	deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
-	if (cachedCondition == undefined) {
+	if (cachedCondition == undefined or 1 == 1) {
 		console.log("cookie undefined, getting current conditions");
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/conditions/q/35080.json";
 		$.ajax(url, {
@@ -129,6 +129,9 @@ function parseForecastCondition(forecast) {
 	condition.tempLow = forecast.low.fahrenheit;
 	condition.shortText = forecast.conditions;
 	condition.precip = forecast.pop;
+	var url = forecast.icon_url;
+	url = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.'));
+	condition.icon = wunderIcons[url];
 	return condition;
 }
 
@@ -180,6 +183,7 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-low").text(forecast[0].tempLow + "°");
 	$("#wunder-today-condition").text(forecast[0].shortText);
 	$("#wunder-today-precip").text(forecast[0].precip);
+	$("#wunder-today-icon").addClass(forecast[0].icon);
 }
 
 function formatWunderWind2(speed, direction, gust) {
