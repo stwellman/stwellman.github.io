@@ -20,7 +20,7 @@ function getCurrentCondition() {
 	console.log("getCurrentCondition...");
 	deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
-	if (cachedCondition == undefined or 1 == 1) {
+	if (cachedCondition == undefined || 1 == 1) {
 		console.log("cookie undefined, getting current conditions");
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/conditions/q/35080.json";
 		$.ajax(url, {
