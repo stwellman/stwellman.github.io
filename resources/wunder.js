@@ -128,6 +128,7 @@ function parseForecastCondition(forecast) {
 	condition.tempHigh = forecast.high.fahrenheit;
 	condition.tempLow = forecast.low.fahrenheit;
 	condition.shortText = forecast.conditions;
+	condition.precip = forecast.pop;
 	return condition;
 }
 
@@ -175,8 +176,10 @@ function renderWunderCurrentCondition(condition) {
 }
 
 function renderWunderForecast(forecast) {
-	$("#wunder-today-high").text(forecast[0].temp + "°");
-	$("#wunder-today-low").text(forecast[1].temp + "°");
+	$("#wunder-today-high").text(forecast[0].tempHigh + "°");
+	$("#wunder-today-low").text(forecast[0].tempLow + "°");
+	$("#wunder-today-condition").text(forecast[0].shortText);
+	$("#wunder-today-precip").text(forecast[0].precip);
 }
 
 function formatWunderWind2(speed, direction, gust) {
