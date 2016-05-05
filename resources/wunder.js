@@ -117,7 +117,7 @@ function parseForecastArray(result) {
 	var arr = result.forecast.simpleforecast.forecastday;
 	for (var i = 0; i < arr.length; i++) {
 		console.log(arr[i]);
-		forecasts[i] = parseForecast(arr[i]);
+		forecasts[i] = parseForecastCondition(arr[i]);
 	}
 	return forecasts;
 }
