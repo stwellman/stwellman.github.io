@@ -73,7 +73,7 @@ function getWunderAstronomy() {
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/astronomy/q/35080.json";
 		$.ajax(url, {
 			success : function(result) {
-				var astronomy = parseAstronomy(result);
+				var astronomy = parseForecastArray(result);
 				renderWunderAstronomy(astronomy);
 				setCookie("wunderAstronomy", astronomy, 45);
 			},
@@ -110,18 +110,25 @@ function parseCondition(result) {
 	return condition;
 }
 
-function parseForecast(result) {
+function parseForecastArray(result) {
 	var forecasts = {};
 	var j = 0;
 	console.log("length: " + result.forecast.simpleforecast.forecastday.length);
 	var arr = result.forecast.simpleforecast.forecastday;
 	for (var i = 0; i < arr.length; i++) {
 		console.log(arr[i]);
-		j = i * 2;
-		forecasts[j++] = parseForecastDay(arr[i]);
-		forecasts[j] = parseForecastNight(arr[i]);
+		forecasts[i] = parseForecast(arr[i]);
 	}
 	return forecasts;
+}
+
+function parseForecastCondition(forecast) {
+	var condition = new wunderCondition();
+	condition.title = forecast.date.weekday;
+	condition.tempHigh = forecast.high.fahrenheit;
+	condition.tempLow = forecast.low.fahrenheit;
+	condition.shortText = forecast.conditions;
+	return condition;
 }
 
 function parseForecastDay(day) {
@@ -228,6 +235,8 @@ var wunderCondition = function() {
 	this.updated = "";
 	this.title = "";
 	this.temp = "";
+	this.tempHigh = "";
+	this.tempLow = "";
 	this.feelsLike = "";
 	this.humidity = "";
 	this.shortText = "";
