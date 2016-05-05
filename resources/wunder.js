@@ -20,7 +20,7 @@ function getCurrentCondition() {
 	console.log("getCurrentCondition...");
 	deleteCookie("wunderCurrent");
 	var cachedCondition = getCookie("wunderCurrent");
-	if (cachedCondition == undefined || 1 == 1) {
+	if (cachedCondition == undefined) {
 		console.log("cookie undefined, getting current conditions");
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/conditions/q/35080.json";
 		$.ajax(url, {
@@ -45,7 +45,7 @@ function getCurrentCondition() {
 function getForecastConditions() {
 	var cachedForecast = getCookie("wunderForecast");
 	//deleteCookie("wunderForecast");
-	if (cachedForecast == undefined) {
+	if (cachedForecast == undefined || 1 == 1) {
 		console.log("cookie undefined, getting forecast conditions");
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/forecast/q/35080.json";
 		$.ajax(url, {
