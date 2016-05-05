@@ -27,7 +27,7 @@
       margin-top: -5px;
 }
  
-#wunder-current,#wunder-today {
+#wunder-current, #wunder-today {
       background-color: #3b3b3b;
       border-radius: 5px;
       float: left;
@@ -58,6 +58,10 @@
  
 #wunder-current-feels, #wunder-today-astronomy {
       font-size: 1.1em;
+}
+ 
+#wunder-current > div, #wunder-today > div {
+      margin-top: 3px;
 }
  
 #wunder-current-temp {
