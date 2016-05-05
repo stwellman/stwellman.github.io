@@ -182,7 +182,7 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-high").text(forecast[0].tempHigh + "°");
 	$("#wunder-today-low").text(forecast[0].tempLow + "°");
 	$("#wunder-today-condition").text(forecast[0].shortText);
-	$("#wunder-today-precip").text(forecast[0].precip);
+	$("#wunder-today-precip").text(forecast[0].precip + "%");
 	$("#wunder-today-icon").addClass(forecast[0].icon);
 }
 
