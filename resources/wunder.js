@@ -191,10 +191,10 @@ function renderWunderForecasts(forecasts) {
 	for (var i = 0; i < forecast.length; i++) {
 		console.log(forecast[i]);
 		condition = forecasts[i];
-		$("#wunder-forecast-title-" + i).text(condition.title);
-		$("#wunder-forecast-hi-" + i).text(condition.tempHigh);
-		$("#wunder-forecast-lo-" + i).text(condition.tempLow);
-		$("#wunder-forecast-icon-" + i).addClass(condition.icon);
+		$("#wunder-forecasts-title-" + i).text(condition.title);
+		$("#wunder-forecasts-hi-" + i).text(condition.tempHigh);
+		$("#wunder-forecasts-lo-" + i).text(condition.tempLow);
+		$("#wunder-forecasts-icon-" + i).addClass(condition.icon);
 	}
 }
 
