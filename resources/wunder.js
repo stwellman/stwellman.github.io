@@ -198,8 +198,8 @@ function renderWunderForecasts(forecasts) {
 		condition = forecasts[i];
 		console.log(" condition: " + condition.title);
 		$("#wunder-forecasts-title-" + i).text(condition.title);
-		$("#wunder-forecasts-hi-" + i).text(condition.tempHigh);
-		$("#wunder-forecasts-lo-" + i).text(condition.tempLow);
+		$("#wunder-forecasts-hi-" + i).text(condition.tempHigh + "°");
+		$("#wunder-forecasts-lo-" + i).text(condition.tempLow + "°");
 		$("#wunder-forecasts-icon-" + i).addClass(condition.icon);
 	}
 }
