@@ -124,7 +124,7 @@ function parseForecastArray(result) {
 
 function parseForecastCondition(forecast) {
 	var condition = new wunderCondition();
-	condition.title = forecast.date.weekday;
+	condition.title = forecast.date.weekday_short;
 	condition.tempHigh = forecast.high.fahrenheit;
 	condition.tempLow = forecast.low.fahrenheit;
 	condition.shortText = forecast.conditions;
@@ -184,6 +184,18 @@ function renderWunderForecast(forecast) {
 	$("#wunder-today-condition").text(forecast[0].shortText);
 	$("#wunder-today-precip").text(forecast[0].precip + "%");
 	$("#wunder-today-icon").addClass(forecast[0].icon);
+}
+
+function renderWunderForecasts(forecasts) {
+	var condition;
+	for (var i = 0; i < forecast.length; i++) {
+		console.log(forecast[i]);
+		condition = forecasts[i];
+		$("#wunder-forecast-title-" + i).text(condition.title);
+		$("#wunder-forecast-hi-" + i).text(condition.tempHigh);
+		$("#wunder-forecast-lo-" + i).text(condition.tempLow);
+		$("#wunder-forecast-icon-" + i).addClass(condition.icon);
+	}
 }
 
 function formatWunderWind2(speed, direction, gust) {
