@@ -189,8 +189,9 @@ function renderWunderForecast(forecast) {
 function renderWunderForecasts(forecasts) {
 	var condition;
 	for (var i = 0; i < forecast.length; i++) {
-		console.log(forecast[i]);
+		console.log("render forecast " + i);
 		condition = forecasts[i];
+		console.log(" condition: " + condition.title);
 		$("#wunder-forecasts-title-" + i).text(condition.title);
 		$("#wunder-forecasts-hi-" + i).text(condition.tempHigh);
 		$("#wunder-forecasts-lo-" + i).text(condition.tempLow);
