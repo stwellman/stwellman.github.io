@@ -97,8 +97,10 @@
 	text-align: center;
 	border: 1px solid gray;
 }
+#wunder-forecasts > div > div {
+	border-top: 1px solid silver;
+}
 #wunder-forecasts > div > div > div {
-	border: 1px solid silver;
 	float: left;
 	text-align: center;
 	width: 48%;
