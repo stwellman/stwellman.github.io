@@ -113,7 +113,7 @@ function parseCondition(result) {
 }
 
 function parseForecastArray(result) {
-	var forecasts = {};
+	var forecasts = [];
 	var j = 0;
 	console.log("length: " + result.forecast.simpleforecast.forecastday.length);
 	var arr = result.forecast.simpleforecast.forecastday;
