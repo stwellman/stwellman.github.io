@@ -50,9 +50,10 @@ function getForecastConditions() {
 		var url = "https://api.wunderground.com/api/c5209dc3ae8416a7/forecast/q/35080.json";
 		$.ajax(url, {
 			success : function(result) {
-				var forecast = parseForecastArray(result);
-				renderWunderForecast(forecast);
-				setCookie("wunderForecast", forecast, 45);
+				var forecasts = parseForecastArray(result);
+				renderWunderForecast(forecasts);
+				renderWunderForecasts(forecasts);
+				setCookie("wunderForecast", forecasts, 45);
 			},
 			error : function() {
 				// Handle error
