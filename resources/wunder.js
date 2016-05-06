@@ -51,6 +51,7 @@ function getForecastConditions() {
 		$.ajax(url, {
 			success : function(result) {
 				var forecasts = parseForecastArray(result);
+				console.log("forecasts length: " + forecasts.length);
 				renderWunderForecast(forecasts);
 				renderWunderForecasts(forecasts);
 				setCookie("wunderForecast", forecasts, 45);
@@ -120,6 +121,7 @@ function parseForecastArray(result) {
 		console.log(arr[i]);
 		forecasts[i] = parseForecastCondition(arr[i]);
 	}
+	console.log("return length: " + forecasts.length);
 	return forecasts;
 }
 
