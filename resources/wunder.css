@@ -77,7 +77,6 @@
 }
  
 #wunder-forecasts {
-	border: 0px solid blue;
 	bottom: 0;
 	font-size: 1.1em;
 	height: 90px;
@@ -95,10 +94,10 @@
 	margin-right: 2px;
 	width: 24%;
 	text-align: center;
-	border: 1px solid gray;
+	border: 1px solid #444;
 }
 #wunder-forecasts > div > div {
-	border-top: 1px solid #888888;
+	border-top: 1px solid #444;
 }
 #wunder-forecasts > div > div > div {
 	float: left;
