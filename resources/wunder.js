@@ -188,6 +188,7 @@ function renderWunderForecast(forecast) {
 }
 
 function renderWunderForecasts(forecasts) {
+	console.log("renderWunderForecasts, len:" + forecasts.length);
 	var condition;
 	for (var i = 0; i < forecasts.length; i++) {
 		console.log("render forecast " + i);
