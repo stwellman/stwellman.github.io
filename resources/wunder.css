@@ -111,7 +111,7 @@
 }
 
 .wunder-forecasts-precip {
-	width: 98%;
+	width: 98% !important;
 	font-size: 80%;
 }
 
