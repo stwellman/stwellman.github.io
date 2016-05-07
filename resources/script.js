@@ -224,6 +224,7 @@ nextPoll(30), refresh(3600);
 var cellSize = getUrlParameter("t") || tileSize,
     cellGutter = getUrlParameter("g") || 6;
 
+console.log("cellSize: " + cellSize);
 console.log("gutter: " + cellGutter);
 
 //*********************  custom js
