@@ -113,7 +113,7 @@
 .wunder-forecasts-precip {
 	width: 98% !important;
 	font-size: 80%;
-	opacity: 0.8;
+	opacity: 0.5;
 }
 
 #wunder-forecasts > div > div > div > i {
