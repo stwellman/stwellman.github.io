@@ -31,8 +31,7 @@
 .thermostatCool{background-color: #6600CC} /*violet-blue*/
 
 .tile {border-radius:2px;color:white}
-.tiles {overflow:hidden}
-.tiles {margin:0px;}
+.tiles {overflow: hidden; margin: 2px 12px 2px 2px;}
 
 .switch, .dimmer, .dimmerLight, .momentary, .clock, .lock, .refresh, .link, .dashboard, .menu,
 .thermostatHeat .icon.up, .thermostatHeat .icon.down,
