@@ -201,7 +201,7 @@ function renderWunderForecasts(forecasts) {
 		$("#wunder-forecasts-hi-" + i).text(condition.tempHigh + "°");
 		$("#wunder-forecasts-lo-" + i).text(condition.tempLow + "°");
 		$("#wunder-forecasts-icon-" + i).addClass(condition.icon);
-		$("#wunder-forecasts-precip-" + i).text("Precip: " + condition.precip);
+		$("#wunder-forecasts-precip-" + i).text("Precip: " + condition.precip + "%");
 	}
 }
 
