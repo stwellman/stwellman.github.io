@@ -110,6 +110,11 @@
 	width: 48%;
 }
 
+.wunder-forecasts-precip {
+	width: 98%;
+	font-size: 80%;
+}
+
 #wunder-forecasts > div > div > div > i {
 	font-size: 1.7em;
 	margin-top: 10px;
