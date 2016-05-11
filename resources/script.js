@@ -9,6 +9,22 @@ function thermostatEvent(t, e) {
     }, 500)
 }
 
+function thermostatCoolEvent(t, e) {
+    window[t.data("device")] && clearTimeout(window[t.data("device")]);
+    var i = parseInt(t.attr("data-setpoint"));
+    i < maxTemp && i > minTemp && (i += e, t.find(".icon.setpoint").html(i + "&deg;")), t.attr("data-setpoint", i), window[t.data("device")] = setTimeout(function() {
+        animateClick(t), sendCommand(t.attr("data-type"), t.attr("data-device"), "setpoint", i)
+    }, 500)
+}
+
+function thermostatHeatEvent(t, e) {
+    window[t.data("device")] && clearTimeout(window[t.data("device")]);
+    var i = parseInt(t.attr("data-setpoint"));
+    i < maxTemp && i > minTemp && (i += e, t.find(".icon.setpoint").html(i + "&deg;")), t.attr("data-setpoint", i), window[t.data("device")] = setTimeout(function() {
+        animateClick(t), sendCommand(t.attr("data-type"), t.attr("data-device"), "setpoint", i)
+    }, 500)
+}
+
 function animateClick(t) {
     spinner(t), t.closest(".tile").animate({
         opacity: .3
@@ -214,6 +230,10 @@ $(function() {
         thermostatEvent($(this).closest(".tile"), 1)
     }), void $(".thermostatHeat .down, .thermostatCool .down").click(function() {
         thermostatEvent($(this).closest(".tile"), -1)
+    }), void $(".thermostat .coolDown, .thermostat .coolUp").click(function() {
+        thermostatCoolEvent($(this).closest(".tile"), this.device-data)
+    }), void $(".thermostat .heatDown, .thermostat .heatUp").click(function() {
+        thermostatHeatEvent($(this).closest(".tile"), this.device-data)
     }));
 	//doCustomJs();
 });
