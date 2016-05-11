@@ -193,7 +193,7 @@ function renderWunderForecast(forecast) {
 function renderWunderForecasts(forecasts) {
 	console.log("renderWunderForecasts, len:" + forecasts.length);
 	var condition;
-	for (var i = 0; i < forecasts.length; i++) {
+	for (var i = 1; i < forecasts.length; i++) {
 		console.log("render forecast " + i);
 		condition = forecasts[i];
 		console.log(" condition: " + condition.title);
