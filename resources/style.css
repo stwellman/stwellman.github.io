@@ -1,6 +1,6 @@
 .version-5-3-3 {display: none}
 
-.tile {background-color: grey}
+.tile, .sub-tile {background-color: grey}
 .weather {background-color: #a20025;}
 .clock {background-color: #607d8b;}/*blue gray*/
 .presence {background-color: #3f51b5;}/*indigo*/
@@ -30,7 +30,7 @@
 .thermostatHeat{background-color: #FF9900} /*amber*/
 .thermostatCool{background-color: #6600CC} /*violet-blue*/
 
-.tile {border-radius:2px;color:white}
+.tile, sub-tile {border-radius:2px;color:white}
 .tiles {overflow: hidden; margin: 2px 12px 2px 2px;}
 
 .switch, .dimmer, .dimmerLight, .momentary, .clock, .lock, .refresh, .link, .dashboard, .menu,
@@ -180,10 +180,11 @@ ul{list-style-type: none;padding-left:0;}
 
 /* smooth */
 .theme-smooth .tiles {overflow: visible;}
-.theme-smooth .tile {background-color: #333333;
+.theme-smooth .tile, .theme-smooth .sub-tile {background-color: #333333;
     border: 1px solid #666666;  margin: 4px;
     color: #C8DAE3;border-radius: 5px;}
-.theme-smooth .blank.tile {border: 0px solid #666666;}
+.theme-smooth .blank.tile, .theme-smooth .blank.sub-tile 
+	{border: 0px solid #666666;}
 .theme-smooth  .ui-slider-handle.ui-btn.ui-shadow {background-color:white}
 .theme-smooth .tile.active .icon i.active {color: blue}
 .theme-smooth {color: white}
