@@ -20,6 +20,14 @@
 	height: 58%;
 }
 
+#wunder-current {
+	margin: 0px 4px 0px 0px;
+}
+ 
+#wunder-today {
+	margin: 0px;
+}
+ 
 #wunder-current, #wunder-today {
       float: left;
       position: relative;
