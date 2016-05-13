@@ -215,6 +215,7 @@ $(function() {
         var t = $(this).closest(".tile");
         sendCommand("music", t.attr("data-device"), "nextTrack")
     }), $(".mode, .hello-home, .thermostat").click(function() {
+    	console.log("clicked - doing popup");
         $("#" + $(this).attr("data-popup")).popup("open")
     }), $("#mode-popup li").click(function() {
         $("#mode-popup").popup("close");
