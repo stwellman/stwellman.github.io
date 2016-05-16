@@ -1,9 +1,19 @@
-
 #wunder-tile {
       border: 1px solid blue;
       background-color: silver;
       height: 280;
       width: 420;
+}
+ 
+#wunder-header {
+	display: none;
+}
+
+#wunder-header div {
+      float: left;
+      border: 1px solid blue;
+      width: 47%;
+      padding: 5px 5px 0px 5px;
 }
  
 #wunder-location, #wunder-date {
@@ -17,26 +27,24 @@
 }
  
 #wunder-conditions {
-	height: 63%;
+	height: 58%;
 }
 
-#wunder-current {
-	margin: 0px 4px 0px 0px;
-}
- 
-#wunder-today {
-	margin: 0px;
-}
- 
 #wunder-current, #wunder-today {
+      background-color: #3b3b3b;
+      border-radius: 5px;
       float: left;
       position: relative;
       height: 100%;
-      width: 49%;
+      width: 48%;
+      border: 1px solid #444444;
+      margin: 5px 0 0 5px;
+      padding: 3px 0 3px 0;
       text-align: center;
 }
  
 #wunder-current-1 div, #wunder-today-1 div {
+      border: 0px solid red;
       float: left;
       width: 48%;
       text-align: center;
@@ -75,19 +83,22 @@
 	bottom: 0;
 	font-size: 1.1em;
 	height: 36%;
-	margin: 0 0px 0 0px;
+	margin: 0 4px 0 5px;
 	position: absolute;
 	text-align: center;
 	width: 100%;
 }
 
 #wunder-forecasts > div {
+	background-color: #3b3b3b;
+	border-radius: 5px;
 	position: relative;
 	float: left;
-	margin: 0 4px 0 0;
-	height: 100%;
-	width: 32%;
+	margin-right: 6px;
+	height: 92%;
+	width: 31.3%;
 	text-align: center;
+	border: 1px solid #444;
 }
 #wunder-forecasts > div > div {
 	border-top: 1px solid #444;
@@ -105,7 +116,6 @@
 }
 
 #wunder-forecasts > div > div > div > i {
-	font-size: 2.2em;
+	font-size: 1.7em;
 	margin-top: 10px;
 }
-
