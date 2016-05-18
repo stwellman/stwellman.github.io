@@ -17,7 +17,6 @@
 .humidity {background-color: #795548;}/*brown*/
 .luminosity {background-color: #906b8d;}/*violet-blue*/*/
 .link {background-color: #263B44;} /*slate*/
-.thermostat {background-color: #009688} /*teal*/
 .energy {background-color: #558b2f} /*l green 800*/
 .power {background-color: #33691e} /*l green 900*/
 .water {background-color: #006064} /*cyan a900*/
@@ -27,6 +26,7 @@
 .video {background-color:#8E8E8E} /*dropcam grey*/
 .blank.tile{background:none!important}
 .dashboard {background-color: #FE0002;} /* red */
+.thermostat {background-color: #009688} /*teal*/
 .thermostatHeat{background-color: #FF9900} /*amber*/
 .thermostatCool{background-color: #6600CC} /*violet-blue*/
 
@@ -89,11 +89,16 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
 .mode.Night .icon.text{display:none}
 .icon, .icon * {text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);}
 
+.thermostat .currentTemperature { background-color: #444; border-radius: 50%;}
+.thermostat .operatingState { margin-top: -3em; font-size: 2.2em;}
 .thermostat .heatSet .heatSetpoint, .thermostat .coolSet .coolSetpoint { font-size:2em; }
-.thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down, .thermostat .heatSet .heatSetpoint {margin-left: -2em; }
-.thermostat .coolSet .icon.up, .thermostat .coolSet .icon.down, .thermostat .coolSet .coolSetpoint  {margin-left: 2em; }
-.thermostat .icon.up, .thermostatHeat .icon.up, .thermostatCool .icon.up {margin-top: -3em; font-size:2em; line-height:2em;}
-.thermostat .icon.down, .thermostatHeat .icon.down, .thermostatCool .icon.down {margin-top: 1em; font-size:2em; line-height:2em;}
+.thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down, .thermostat .heatSet .heatSetpoint {margin-left: -2.5em; }
+.thermostat .coolSet .icon.up, .thermostat .coolSet .icon.down, .thermostat .coolSet .coolSetpoint  {margin-left: 2.5em; }
+.thermostat .icon.up {margin-top: -3em; font-size:2em; line-height:2em;}
+.thermostat .icon.down {margin-top: 1em; font-size:2em; line-height:2em;}
+
+.thermostatHeat .icon.up, .thermostatCool .icon.up {margin-top: -3em; font-size:2em; line-height:2em;}
+.thermostatHeat .icon.down, .thermostatCool .icon.down {margin-top: 1em; font-size:2em; line-height:2em;}
 
 /*******/
 .r45 {
