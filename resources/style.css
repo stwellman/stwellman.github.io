@@ -90,6 +90,7 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
 .icon, .icon * {text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);}
 
 .thermostat .temperatureBG { background-color: #444; border-radius: 50%; position: absolute; top: 25%; left: 25%; width: 50%; height: 50%;}
+.thermostat .temperatureBG2 { background-color: #393939; border-radius: 50%; position: absolute; top: 15%; left: 15%; width: 70%; height: 70%;}
 .thermostat .operatingState { margin-top: -4.1em; font-size: 2em;}
 .thermostat .heatSet .heatSetpoint, .thermostat .coolSet .coolSetpoint { font-size:2em; }
 .thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down, .thermostat .heatSet .heatSetpoint {margin-left: -2.8em; }
