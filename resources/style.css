@@ -100,7 +100,7 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
 .thermostat .heatSet .heatSetpoint, .thermostat .coolSet .coolSetpoint { font-size:2em; }
 .thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down, .thermostat .heatSet .heatSetpoint {margin-left: -2.8em; }
 .thermostat .coolSet .icon.up, .thermostat .coolSet .icon.down, .thermostat .coolSet .coolSetpoint  {margin-left: 2.8em; }
-.thermostat .icon { cursor: normal; }
+.thermostat .icon { cursor: default; }
 .thermostat .icon.up {margin-top: -2.5em; font-size:1.8em; line-height:1.8em;}
 .thermostat .icon.down {margin-top: 0.5em; font-size:1.8em; line-height:1.8em;}
 
