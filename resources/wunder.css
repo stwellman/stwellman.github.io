@@ -111,5 +111,10 @@
 
 #wunder-forecasts > div > div > div > i {
 	font-size: 2.3em;
-	margin-top: 0.2em 0.3 em 0 0;
+	margin-top: 0.2em;
+}
+
+#wunder-forecasts > div > div > div > div > i {
+	font-size: 0.8em;
+	margin-right: 0.2em;
 }
