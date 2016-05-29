@@ -96,7 +96,7 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
 .thermostat .operatingState { margin-top: -4.4em; font-size: 1.8em;}
 .thermostat .fanMode { margin-top: 1.5em; font-size: 1.8em;}
 .thermostat .currentTemperature { font-size: 4.5em;}
-.thermostat .heatSetpoint { background-color: darkred; 
+.thermostat .heatSetpoint { border: 2px solid darkred; 
     height: 1.35em;
     width: 1.35em;
     border-radius: 50%;
@@ -106,7 +106,8 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
     position: absolute;
     margin-top: -0.7em;
     margin-left: -4.1em; }
-.thermostat .coolSetpoint { background-color: darkblue; 
+.thermostat .coolSetpoint { 
+    border: 2px solid darkblue; 
     height: 1.35em;
     width: 1.35em;
     border-radius: 50%;
