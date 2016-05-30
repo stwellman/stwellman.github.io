@@ -10,9 +10,13 @@ function thermostatEvent(t, e) {
 }
 
 function thermostatCoolEvent(t, e) {
+	    	console.log("thermostatCoolEvent");
+
     window[t.data("device")] && clearTimeout(window[t.data("device")]);
     var i = parseInt(t.attr("data-coolSetpoint"));
+	    	console.log("i: " + i);
     i < maxTemp && i > minTemp && (i += e, t.find(".coolSetpoint").html(i)), t.attr("data-coolSetpoint", i), window[t.data("device")] = setTimeout(function() {
+	    	console.log("sending command i: " + i);
         animateClick(t), sendCommand(t.attr("data-type"), t.attr("data-device"), "setcoolpoint", i)
     }, 500)
 }
@@ -20,7 +24,7 @@ function thermostatCoolEvent(t, e) {
 function thermostatHeatEvent(t, e) {
     window[t.data("device")] && clearTimeout(window[t.data("device")]);
     var i = parseInt(t.attr("data-heatSetpoint"));
-    i < maxTemp && i > minTemp && (i += e, t.find(".heatSetpoint").html(i + "&deg;")), t.attr("data-heatsetpoint", i), window[t.data("device")] = setTimeout(function() {
+    i < maxTemp && i > minTemp && (i += e, t.find(".heatSetpoint").html(i)), t.attr("data-heatsetpoint", i), window[t.data("device")] = setTimeout(function() {
         animateClick(t), sendCommand(t.attr("data-type"), t.attr("data-device"), "setheatpoint", i)
     }, 500)
 }
