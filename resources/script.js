@@ -237,11 +237,14 @@ $(function() {
         thermostatEvent($(this).closest(".tile"), -1)
         
     }), void $(".thermostat .coolUp").click(function() {
+    	console.log("cool up clicked");
         thermostatCoolEvent($(this).closest(".tile"), 1)
     }), void $(".thermostat .coolDown").click(function() {
+    	console.log("cool down clicked");
         thermostatCoolEvent($(this).closest(".tile"), -1)
         
     }), void $(".thermostat .heatUp").click(function() {
+    	console.log("heat up clicked");
         thermostatHeatEvent($(this).closest(".tile"), 1)
     }), void $(".thermostat .heatDown").click(function() {
         thermostatHeatEvent($(this).closest(".tile"), -1)
