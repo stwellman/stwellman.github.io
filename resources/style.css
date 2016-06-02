@@ -96,8 +96,8 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
 .thermostat .operatingMode { margin-top: -4.4em; font-size: 1.8em;}
 .thermostat .fanMode { margin-top: 1.5em; font-size: 1.8em;}
 .thermostat .currentTemperature { font-size: 4.5em;}
-.thermostat .heatSetpoint { border: 2px solid darkred; left: 50%; margin-left: -4.1em; }
-.thermostat .coolSetpoint { border: 2px solid darkblue; left: 38%; margin-left: 3.9em; }
+.thermostat .heatSetpoint { border: 2px solid darkred; left: 8%; xmargin-left: -3.9em; }
+.thermostat .coolSetpoint { border: 2px solid darkblue; left: 76%; xmargin-left: 3.9em; }
 .thermostat .heatSet .heatSetpoint, 
 .thermostat .coolSet .coolSetpoint { font-size: 1.7em; height: 1.35em;
     width: 1.35em;
@@ -107,8 +107,8 @@ html body .spinCold .ui-group-theme-a .ui-btn, .ui-page-theme-a .ui-btn{border:0
     position: absolute;
     margin-top: -0.7em;
 }
-.thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down {margin-left: -3em; }
-.thermostat .coolSet .icon.up, .thermostat .coolSet .icon.down {margin-left: 2.9em; }
+.thermostat .heatSet .icon.up, .thermostat .heatSet .icon.down {left: 9%; xmargin-left: -3em; }
+.thermostat .coolSet .icon.up, .thermostat .coolSet .icon.down {left: 75%; xmargin-left: 2.9em; }
 .thermostat .icon { cursor: default; }
 .thermostat .icon.up {margin-top: -2.3em; font-size:1.8em; line-height:1.8em; width: 20%; cursor: pointer;}
 .thermostat .icon.down {margin-top: 0.35em; font-size:1.8em; line-height:1.8em; width: 20%; cursor: pointer;}
